@@ -21,7 +21,7 @@ import d3d11.interfaces.D3d11BlendState;
 import d3d11.interfaces.D3d11DepthStencilState;
 import d3d11.interfaces.D3d11DepthStencilView;
 import d3d11.interfaces.D3d11RenderTargetView;
-import d3d11.interfaces.D3d11Resourse;
+import d3d11.interfaces.D3d11Resource;
 import d3d11.structures.D3d11Box;
 import d3d11.structures.D3d11Rect;
 import d3d11.structures.D3d11Viewport;

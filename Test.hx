@@ -33,6 +33,10 @@ import dxgi.interfaces.DxgiFactory;
 import dxgi.interfaces.DxgiOutput;
 import dxgi.interfaces.DxgiSwapChain;
 import dxgi.structures.DxgiSwapChainDescription;
+import d3d11.enumerations.D3d11ClearFlag;
+import d3dcommon.enumerations.D3dDriverType;
+import dxgi.enumerations.DxgiSwapEffect;
+import Sys.sleep;
 
 @:headerInclude('SDL_syswm.h')
 @:buildXml('<target id = "haxe">
@@ -46,6 +50,14 @@ class Test
     {
         new Test();
     }
+	
+	@:functionCode('
+		HWND hw = FindWindow(NULL, "FNF: BD");
+		return hw;
+	')
+	private function r():com.HWND {
+		return null;
+	}
 
     final window     : Window;
     final factory    : DxgiFactory;
@@ -125,9 +137,9 @@ class Test
         swapChainDescription.bufferCount       = 1;
         swapChainDescription.bufferUsage       = RenderTargetOutput;
         swapChainDescription.windowed          = true;
-        swapChainDescription.outputWindow      = hwnd;
-
-        if (D3d11.createDevice(adapter, Unknown, null, 0, null, D3d11.SdkVersion, device, null, context) != Ok)
+        swapChainDescription.outputWindow      = r();
+	
+        if (D3d11.createDevice(null, D3dDriverType.Hardware, null, 0, null, D3d11.SdkVersion, device, null, context) != Ok)
         {
             throw 'failed to created device and context';
         }
@@ -251,6 +263,14 @@ class Test
         context.iaSetVertexBuffers(0, [ buffer ], [ 0 ], [ 0 ]);
         context.rsSetViewports([ viewport ]);
 
-        trace('done');
+        while(true) {
+			context.clearRenderTargetView(renderView, [0.7, 0.2, 0.6, 0.5]);
+			context.clearDepthStencilView(dsvView, D3d11ClearFlag.Depth | D3d11ClearFlag.Stencil, 1.0, 0);
+			context.omSetRenderTargets([renderView], dsvView);
+			
+			swapchain.present(DxgiSwapEffect.Discard, 0);
+			
+			sleep(1);
+		}
     }
 }

@@ -32,7 +32,7 @@ import d3d11.interfaces.D3d11RasterizerState;
 import d3d11.interfaces.D3d11BlendState;
 import d3d11.interfaces.D3d11Buffer;
 import d3d11.interfaces.D3d11Texture2D;
-import d3d11.interfaces.D3d11Resourse;
+import d3d11.interfaces.D3d11Resource;
 import d3d11.interfaces.D3d11DepthStencilView;
 
 using cpp.Native;

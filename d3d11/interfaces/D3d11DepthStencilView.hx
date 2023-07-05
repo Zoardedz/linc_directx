@@ -2,7 +2,7 @@ package d3d11.interfaces;
 
 import cpp.Star;
 import com.GUID;
-import d3d11.interfaces.D3d11Resourse;
+import d3d11.interfaces.D3d11Resource;
 import d3d11.structures.D3d11DepthStencilViewDescription;
 
 /**

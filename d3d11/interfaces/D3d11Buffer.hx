@@ -1,7 +1,7 @@
 package d3d11.interfaces;
 
 import com.GUID;
-import d3d11.interfaces.D3d11Resourse;
+import d3d11.interfaces.D3d11Resource;
 
 class D3d11Buffer extends D3d11Resource
 {

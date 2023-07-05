@@ -9,6 +9,8 @@ import haxe.Int64;
 /**
  * The RECT structure defines the coordinates of the upper-left and lower-right corners of a rectangle.
  */
+
+@:access(cpp.Int64)
 class D3d11Rect
 {
     public final backing : Star<NativeD3D11Rect>;
@@ -18,36 +20,36 @@ class D3d11Rect
      */
     public var left (get, set) : Int64;
 
-    inline function get_left() : Int64 return backing.left;
+    inline function get_left() : Int64 return backing.left.toInt64();
 
-    inline function set_left(_v : Int64) return backing.left = _v;
+    inline function set_left(_v : Int64):Int64 return (backing.left = cpp.Int64.ofInt64(_v)).toInt64();
 
     /**
      * The y-coordinate of the upper-left corner of the rectangle.
      */
     public var top (get, set) : Int64;
 
-    inline function get_top() : Int64 return backing.top;
+    inline function get_top() : Int64 return backing.top.toInt64();
 
-    inline function set_top(_v : Int64) return backing.top = _v;
+    inline function set_top(_v : Int64):haxe.Int64 return (backing.top = cpp.Int64.ofInt64(_v)).toInt64();
 
     /**
      * The x-coordinate of the lower-right corner of the rectangle.
      */
     public var right (get, set) : Int64;
 
-    inline function get_right() : Int64 return backing.right;
+    inline function get_right() : Int64 return backing.right.toInt64();
 
-    inline function set_right(_v : Int64) return backing.right = _v;
+    inline function set_right(_v : Int64):haxe.Int64 return (backing.right = cpp.Int64.ofInt64(_v)).toInt64();
 
     /**
      * The y-coordinate of the lower-right corner of the rectangle.
      */
     public var bottom (get, set) : Int64;
 
-    inline function get_bottom() : Int64 return backing.bottom;
+    inline function get_bottom() : Int64 return backing.bottom.toInt64();
 
-    inline function set_bottom(_v : Int64) return backing.bottom = _v;
+    inline function set_bottom(_v : Int64):haxe.Int64 return (backing.bottom = cpp.Int64.ofInt64(_v)).toInt64();
 
     public function new(_existing : Pointer<NativeD3D11Rect> = null)
     {
