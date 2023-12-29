@@ -1,8 +1,5 @@
 --cpp out
 
--L hxcpp_extern_helpers
--L linc_sdl
-
 -D dxgi_feature_level=1.1
 -D analyzer-optimize
 
