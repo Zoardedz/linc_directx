@@ -2,6 +2,7 @@ package d3d11.interfaces;
 
 import cpp.Star;
 import d3d11.interfaces.D3d11Resource;
+import d3d11.interfaces.D3d11Resource.NativeID3D11Resource;
 import d3d11.structures.D3d11ShaderResourceViewDescription;
 
 /**
