@@ -1,8 +1,0 @@
---cpp out
-
--D dxgi_feature_level=1.1
--D analyzer-optimize
-
--p ./
-
--m Test
